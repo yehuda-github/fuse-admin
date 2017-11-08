@@ -1,0 +1,45 @@
+<div class="itemTopBorder">
+	<div class="folderColor float">
+	</div>
+	
+	<div class="selectBox float">
+		<div class="selectBoxUnselectedBak">
+		</div>
+	</div>
+
+	<div class="senderName float">
+		<% if (from[0].attributes.personal.length > 0){ %>
+			<%= from[0].attributes.personal %>
+		<% }else{ %>
+		<%= from[0].attributes.address %>
+		<% }%>
+		<!--  to do make it real thread unread messages 
+			<span class="threadNumber">(3)</span>
+		-->
+	</div>
+	<div class="messagePreview float">
+		<%= attributes.subject %>
+	</div>
+	<% if (attributes.hasAttachments){ %>
+	<!-- todo: attachment icons -->
+	<div class="attachIcon float">
+	<% }else{ %>
+	<div class="attachIcon float">
+	<% } %>
+	</div>
+	<div class="dateTime float">
+	<% 
+	   var receivedDate = new Date(parseInt(attributes.receivedDate));
+	   var day, month, year;
+	   month = (parseInt(receivedDate.getUTCMonth()) + 1) > 10 ? (receivedDate.getUTCMonth() + 1) : "0"+ (receivedDate.getUTCMonth() + 1);
+	   day = parseInt(receivedDate.getUTCDate()) > 10 ? receivedDate.getUTCDate() : "0" + receivedDate.getUTCDate();
+	   
+		 %>
+	<%= day %>/<%=month%>
+	</div>
+	<div class="originateIcon float">
+	</div>
+	<div class="clear">
+	</div>
+</div>
+

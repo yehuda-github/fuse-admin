@@ -1,0 +1,138 @@
+<div class="composeFormBox">
+	
+	<div class="compose-tabs">
+		<ul id="composeActionItems" class="tabs">
+			<li id="mail" class="tab selected">
+				<a href="javascript:void(0);" class="blue">Mail</a>
+				<div class="border-line"></div>
+			</li>
+			<li id="sms" class="tab last">
+				<a href="javascript:void(0);" class="blue">SMS</a>
+				<div class="border-line"></div>
+			</li>
+			<li id="reply" class="tab reply first selected">
+				<a href="javascript:void(0);" class="blue">reply</a>
+				<div class="border-line"></div>
+			</li>
+			<li id="reply_to_all" class="tab reply_to_all">
+				<a href="javascript:void(0);" class="blue">reply to all</a>
+				<div class="border-line"></div>
+			</li>
+			<li id="forward" class="tab forward">
+				<a href="javascript:void(0);" class="blue">forward</a>
+				<div class="border-line"></div>
+			</li>
+			<li id="btnAction" class="btnAction">
+				<div id="discard" class="btnGray70x31 btn">
+					<div class="btnLeft">
+					</div>
+					<div class="btnCenter ">Discard</div>
+					<div class="btnRight">
+					</div>
+				</div>
+				<div id="save" class="btnGray70x31 btn">
+					<div class="btnLeft">
+					</div>
+					<div class="btnCenter ">Save</div>
+					<div class="btnRight">
+					</div>
+				</div>
+				<div id="sendmail" class="btnRed70x31 btn">
+					<div class="btnLeft">
+					</div>
+					<div class="btnCenter ">Send</div>
+					<div class="btnRight">
+					</div>
+				</div>
+			</li>
+				
+		</ul>
+	
+	
+		<div class="tabs-content">
+			<div id="tabContent_reply" class="tab-content active">
+				<div class="field to">
+					<label class="title"><h3>To</h3></label>
+					<div class="input600x30">
+						<div class="inputLeft">
+						</div>
+						<input id="to" class=" inputCenter" type="text">
+						<div class="inputRight">
+						</div>
+					</div>
+					<div class="contacts" alt="add contact">						
+					</div>
+				</div>	
+				<div class="field cc" style="display:none;">
+					<label class="title"><h3>Cc</h3></label>
+					<div class="input600x30">
+						<div class="inputLeft">
+						</div>
+						<input id="cc" class=" inputCenter" type="text">
+						<div class="inputRight">
+						</div>
+					</div>
+				</div>
+				<div class="field bcc" style="display:none;">
+					<label class="title"><h3>Bcc</h3></label>
+					<div class="input600x30">
+						<div class="inputLeft">
+						</div>
+						<input id="bcc" class=" inputCenter" type="text">
+						<div class="inputRight">
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label class="title">&nbsp;</label>
+					<div class="actionOptions">
+						<a href="javascript:void(0);" id="addCc">Add Cc</a>
+						<a href="javascript:void(0);" id="addBcc">Add Bcc</a>
+						<a href="javascript:void(0);" id="editSubject">Edit Subject</a>
+					</div>
+				</div>
+				<div class="field subject" style="">
+					<label class="title"><h3>Subject</h3></label>
+					<div class="input600x30">
+						<div class="inputLeft">
+						</div>
+						<input id="subject" class=" inputCenter" type="text">
+						<div class="inputRight">
+						</div>
+					</div>
+				</div>
+				<!-- 
+				<div class="field sendFrom">
+					<label class="title">Send From</label>
+					<div class="input600x30">
+						<div class="inputLeft">
+						</div>
+						<input id="formCreateNewFolderInput" class=" inputCenter" type="text">
+						<div class="inputRight">
+						</div>
+					</div>
+				</div>
+				 -->
+				<div class="field">
+					<label class="title">&nbsp;</label>
+					<div class="actionOptions">
+						<a href="javascript:void(0);" id="attachFile" >Attach a file</a>
+						<form id="attachForm" name="attachForm" action="">
+							<input type="file" name="fileInput" id="fileInput" style="opacity: 0; filter:alpha(opacity: 0);" />
+						</form>
+					</div>
+				</div>
+				<div class="body">
+					<textarea class="WYSIWYG" id="mailBody" name="mailBody"></textarea>
+				</div>
+			</div>
+			<div id="tabContent_reply_to_all" class="tab-content">
+				bbb
+			</div>
+			<div id="tabContent_forward" class="tab-content">
+				ccc
+			</div>	
+		</div>
+		
+	</div>
+</div>

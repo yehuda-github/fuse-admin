@@ -1,0 +1,11 @@
+<div class="float">
+	<span><%= firstRecordNumber %></span>
+	<span class="FIRST_LAST_VIEWD_MESSAGES_SEPERATOR"></span>
+	<span><%= lastRecordNumber %></span>
+	<span class="TOTAL_MESSAGES_SEPERATOR"></span>
+	&nbsp;<span><%= totalRecords %></span>&nbsp;
+</div>
+<div class="paginatorNavigationBtns">
+	<div class="navBtn prevPage left lng_UMB_prev <%= isFirstPage === true ? 'disabled' : "" %>" title="previos"></div>
+	<div class="navBtn nextPage right lng_UMB_next <%= isLastPage === true ? 'disabled' : "" %>" title="next"></div>
+</div>

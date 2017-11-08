@@ -1,0 +1,36 @@
+<div class="folderBtnWrapper">
+	<a href="#folder/<%= name %>" class="folderBtn textLarge" >
+		<% if(color && color.length > 0) { %>
+			<span class="color <%= color %> inlineBlock" style="background-color:<%= color %>;">
+			</span>
+		<% } %>
+		<span class="name"><%= name %></span>
+		<% var countHidden = ""; %>
+		<% if(unreadCount <= 0) { countHidden = "hidden"; } %>
+		<span class="count right textXXLarge <%= countHidden %>"><%= unreadCount %></span>
+	</a>
+	<% if(color && color.length > 0) { %>
+		<a href="javascript:void(0);" class="BTN_EDIT editBtn">
+		</a>
+	<% } %>
+</div>
+
+<% if(color && color.length > 0) { %>
+	<div class="editBox">
+		<span class="deleteFolderBtn">
+		</span>
+		
+		<div class="input119x30">
+			<div class="inputLeft">
+			</div>
+			<input value="<%= name %>" class="inputCenter folderNameInput" type="text" />
+			<div class="inputRight">
+			</div>
+		</div>
+		
+		<a href="javascript:void(0);" class="EDIT_MODE_OK_BTN okBtn">
+		</a>
+	</div>
+<% } %>
+<hr />
+

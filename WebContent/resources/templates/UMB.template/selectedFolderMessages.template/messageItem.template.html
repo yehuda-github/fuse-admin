@@ -1,0 +1,133 @@
+<style>
+.mi-thread
+{
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:15px;
+	padding-right:15px;
+	border-bottom: 1px solid #D8D8D8;
+	position:relative;
+}
+.mi-thread-content
+{
+	display: none;
+    width: 700px;    			
+}
+.mi-thread-collapse-false
+{
+	padding: 20px;
+    line-height: 20px;
+}
+.mi-thread-top-container-collapse-false
+{
+	height: 60px;
+}
+.mi-thread-summary-collapse-false
+{
+	margin-top: 20px;
+}
+.mi-thread-content-collapse-false
+{
+	margin-top: 20px;
+}
+</style>
+
+<!-- Title Start -->
+<div class="mi-title-container">
+	<div class="mi-calendar"></div>
+	<div class="mi-title float"><%= attributes.subject %></div>
+</div>
+<hr>
+<!-- Title End -->
+
+<% console.log(messages) %>
+<!-- Threads Start -->
+<div class="threads-container">
+	<% _.each(messages, function(message) { %>
+		<div class="mi-thread">
+			<div class="mi-thread-top-container">
+				<div class="mi-thread-left-section">
+					<div class="mi-thread-title"><%= message.from[0].attributes[2].personal %></div>
+					<div class="mi-thread-summary"><%= customEllipses(message.content.plain) %></div>
+				</div>
+				<div class="mi-thread-right-section">
+					<div class="mi-thread-timeago">( <%= $.timeago(new Date(+new Date())) %> )</div>
+					<div class="mi-thread-time"><%= getTimeFormat() %></div>
+				</div>
+			</div>
+			<div class="mi-thread-content"><%= message.content.plain %></div>
+		</div>
+	
+	<%});%>
+</div>
+<!-- Threads End -->
+
+<!-- From/Reply Start -->
+<div class="mi-from-section">
+     <div class="mi-name float"><%= from[0].attributes.personal %></div>
+     <div class="mi-email float"><%= from[0].id  %></div>
+     
+     	<div class="mi-reply-btn">
+			<div class="btnLeft"></div>
+			<div class="btnCenter">Reply</div>
+			<div id="mi-reply-dropdown" class="btnRight">
+				<div class="mi-arrow"></div>
+			</div>
+			<div class="btnRight-border"></div>				
+		</div>
+
+     <div class="mi-time-ago">( <%= $.timeago(new Date(parseInt(attributes.receivedDate))) %> )</div>
+     <div class="mi-time"><%= String(new Date(parseInt(attributes.receivedDate))).match(/\d{2}:\d{2}/) %></div>
+        
+     <div class="replyDropDownBox onDocumentClick" style="z-index:10px;">
+		<div class="replyDropDownBoxPopTop">
+			<div id="mi-option-reply" class="moveToFolderItem mi-option-item">Reply</div>
+			<div id="mi-option-reply_to_all" class="moveToFolderItem mi-option-item">Reply All</div>
+			<div id="mi-option-forward" class="moveToFolderItem mi-option-item">Forward</div>
+		</div>
+		<hr>
+		<div class="replyDropDownBoxPopBottom"><a href="javascript:void(0);" onclick="$(this).parent().parent().hide();">Close</a></div>
+	</div>  
+</div>
+<!-- From/Reply End -->
+
+<hr>
+
+<!-- Middle Section Satart -->
+<div class="mi-middle-section" style="display:none">
+     <div class="mi-middle-section-title"><%= attributes.subject %></div>
+     <div class="mi-middle-section-from"><%= new Date(parseInt(attributes.sentDate)) %></div>
+     <div class="mi-middle-section-to"><%= $.timeago(new Date(parseInt(attributes.sentDate))) %></div>
+</div>
+
+<div class="mi-details-section">
+     <div class="mi-details-section-content" style="line-height:20px;">	
+    	<% if (content && content.html && content.html.length > 0) { %>
+    		<div><%= content.html %></div>
+		<% } else if (content && content.plain && content.plain.length > 0) { %>
+    		<div><%= content.plain %></div>
+		<% } %>   	
+     </div>
+</div>
+<!-- Middle Section End -->
+ 
+<hr>
+
+<!-- Compose Container Satart -->
+<div class="mi-bottom-section-compose" style="display:none;overflow:hidden;margin-top:15px;"></div>	
+<!-- Compose Container End -->
+
+<!-- Textarea Start -->
+<div class="mi-bottom-section">
+ 	 <div class="mi-bottom-section-avatar-container"></div>
+     <img width="80px" height="60px" class="mi-bottom-section-avatar" src="http://smarty.orange.co.il/Smart/images/c/c7/Gmail_Logo.jpg" />
+     <div class="mi-textarea" style="border: 1px solid #D8D8D8; color: #959595">
+     	<div class="">Click here to<span id="mi-bottom-section-reply" style="text-decoration:underline;cursor:pointer"> Reply</span>
+     	 or <span class="mi-textarea-forward" id="mi-bottom-section-forward">Forward</span></div>
+    </div>
+</div>
+<!-- Textarea Stop -->
+ 
+  		
+ 
+ 

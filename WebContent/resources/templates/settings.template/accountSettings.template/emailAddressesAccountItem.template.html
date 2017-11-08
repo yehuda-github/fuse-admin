@@ -1,0 +1,28 @@
+<div class="emailAddress inlineBlock fuseBlack" style='overflow:hidden;'>
+	<% console.log("address", defaultAccount ,id);
+	 if (address.length > 0){ %>
+	<%= address %>
+	<% }else{ %>
+	<%= name %>
+	<% } %>
+</div>
+
+<% var radioId = "primaryEmailOption_" + id; %>
+
+
+<%  if(defaultAccount == "true") {  %>
+	<div class="primaryEmailOption inlineBlock <%= radioId %> Prime">
+		<input id=<%= radioId %> accountName = "<%= name %>" type="radio" name="primaryEmail" checked="checked" />
+		<label for=<%= radioId %> class="EMAIL_ADDRESSES_PRIMARY_EMAIL_OPTION radioSelected">
+		</label>
+	</div>
+<% } else { %>
+ 
+	<div class="primaryEmailOption inlineBlock <%= radioId %>">
+		<input id=<%= radioId %> accountName = "<%= name %>" type="radio" name="primaryEmail" class="makePrimary" />
+		<label for=<%= radioId %> class="EMAIL_ADDRESSES_MAKE_EMAIL_PRIMARY_OPTION makePrimary">
+		</label>
+	</div>
+	<a href="javascript:void(0);"  accountName="<%= name %>" class="removeBtn EMAIL_ADDRESSES_REMOVE_BTN">
+	</a>
+<% } %>

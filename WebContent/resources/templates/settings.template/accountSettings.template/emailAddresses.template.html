@@ -1,0 +1,43 @@
+<h2 class="EMAIL_ADDRESSES_TITLE"> </h2>
+<hr/>
+
+<div id="emailsDisplay" class="settingsFormBox">
+	<div class="settingsFormBoxTopPadder">
+		<div class="sideText float">
+			<h3 class="EMAIL_ADDRESSES_SEND_MAIL_FROM_TITLE">
+			</h3>
+			<div class="EMAIL_ADDRESSES_SEND_MAIL_FROM_DESCRIPTION description textRegular"> 
+			</div>
+		</div>
+		<div class="sideTextSiblingFix">
+			<ul class="accountsList">
+			</ul>
+			<a id="addEmailAddressBtn" href="javascript:void(0);" class="EMAIL_ADDRESSES_ADD_EMAIL_ADDRRESS_BTN">
+			</a>
+		</div>
+	</div>
+</div>
+
+<hr class="clear"/>
+
+<div id="sendingOptionsForm" class="settingsFormBox">
+	<div class="settingsFormBoxTopPadder">
+		<h3 class="EMAIL_ADDRESSES_SEND_MAIL_FROM_TITLE sideText float">
+		</h3>
+		<ul class="sendingOptions sideTextSiblingFix">
+			<li>
+				
+				<input id="a4" type="radio" class="SettingsReplyFrom" name="replyEmail" <%= !data ? checked="checked" : "" %> />
+				<label for="a4" class="EMAIL_ADDRESSES_REPLY_FROM_SENT_EMAIL_OPTION">
+				</label>
+			</li>
+			<li>
+				<input id="a5" type="radio" class="SettingsReplyFrom" name="replyEmail" <%= data ? checked="checked" : "" %> />
+				<label for="a5" class="EMAIL_ADDRESSES_REPLY_FROM_PRIMARY_EMAIL_OPTION">
+				</label>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<hr class="clear"/>

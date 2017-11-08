@@ -1,0 +1,60 @@
+<% 
+   var emptyFolderMode = (messages.length > 0 ? "" : "emptyFolderMode");
+   var trashEmptyMode = (!folder || folder.alias !== "trash" ? "" : "trashEmptyMode"); 
+%>
+
+<div <%= "class='umbContainer " + emptyFolderMode + " " + trashEmptyMode + "'" %> >
+	<div class="barTop">
+		<h1 class="float">
+			<span class="folderName"><%= folder.name ? folder.name : "" %></span>
+			<span class="unreadCount"><%= folder.unreadCount || folder.unreadCount === 0 ? "("+ folder.unreadCount.toString()+")" : '' %></span>
+			<span class="selectedItems ITEMS_SELECTED">
+			</span>
+		</h1>
+		
+		<div class="filtersView oppositeFloat">
+		</div>
+		
+		<hr/>
+	</div>
+	
+	<div class="emptyFolder">
+		<span class="empty_message_prt1">
+		</span>
+		<span class="smallFolderName folderName"><%= folder.name ? folder.name : "folder" %></span>
+		<span class="empty_message_prt2">
+		</span>&nbsp;
+		<a href="#settings/accountSettings" class="empty_message_prt3">
+		</a>
+		<span class="empty_message_prt4">
+		</span>
+	</div>
+		
+	<div class="barSecondary">
+		<div class="selectionsActions float">
+		</div>
+		<div class="paginator paginatorTop oppositeFloat">
+		</div>
+	</div>
+	
+	<div class="emptyTrashFolder">
+		<a href="javascript:void(0)" class="empty_trash_prt1" ></a>
+		<span class="emptyTrashSpan empty_trash_prt2">
+		</span>
+	</div>
+	
+	<div id="messageItemContainer">
+	</div>
+	
+	<div class="messagesListContainer clear">
+	</div>
+	
+	<div class="footer">
+		<div class="quotaRubric float">
+		</div>
+		
+		<div class="paginator paginatorBottom oppositeFloat">
+		</div>
+	</div>
+	
+</div>
